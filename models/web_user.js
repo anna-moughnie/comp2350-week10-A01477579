@@ -1,6 +1,7 @@
 const { Sequelize, DataTypes } = require("sequelize");
 // const databaseConnectionString = include("/databaseConnectionSequelize");
 const databaseConnectionString = process.env.DB_CONN_STR;
+console.log(databaseConnectionString);
 const sequelize = new Sequelize(databaseConnectionString, { dialect: "mysql" });
 const userModel = sequelize.define(
     "web_user",
