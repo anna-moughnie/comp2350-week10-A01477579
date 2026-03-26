@@ -10,47 +10,41 @@
 			<div class="maincolumns columns is-desktop is-vcentered">
 				<div class="column is-10 is-offset-1 notification is-info is-light box container">
 					<div class="title">
-						Web Users
+						Pets
 					</div>
-					<% if (locals.allUsers) { %>
+					<% if (locals.allPets) { %>
 						<div class="table-container">
 						<table class="table is-bordered is-hoverable is-striped is-narrow">
 							<thead>
 							<tr>
-								<th> Firstname </th>
-								<th> Lastname </th>
-								<th> Email </th>
+								<th> Name </th>
+								<th> &nbsp; </th>
 								<th> &nbsp; </th>
 								<th> &nbsp; </th>
 							</tr>
 							</thead>
 							<% let i=0; %>
-							<% for(i=0; i < allUsers.length; i++) { %>
+							<% for(i=0; i <allPets.length; i++) { %>
 							<tr>
-								<td><%= allUsers[i].first_name %></td>
-								<td><%= allUsers[i].last_name %></td>
-								<td><%= allUsers[i].email %></td>
-								<td><a href="/deleteUser?id=<%= allUsers[i].web_user_id %>">
-									<span class="icon is-small">
+								<td><%=allPets[i].name %></td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;
+									<!-- <span class="icon is-small">
 										<i class="fas fa-user-times"></i>
-									</span></a>
-								</td>
-								<td><a href="/showPets?id=<%= allUsers[i].web_user_id %>">
-									<span class="icon is-small">
-										<i class="fas fa-paw"></i>
-									</span></a>
+									</span></a> -->
 								</td>
 							</tr>
 							<% } %>
 							<tfoot>
-								<tr> <td colspan="5">
-								There are <%= i %> users.
+								<tr> <td colspan="4">
+								There are <%= i %> pets.
 								</td> </tr>
 							</tfoot>
 						</table>
 						</div>
 					<% } %>
-					<form action="addUser" method="post">
+					<!-- <form action="addUser" method="post">
 						<div class="field is-horizontal">
 						  <div class="field-label is-normal">
 							<label class="label">Add New User</label>
@@ -90,7 +84,7 @@
 							</div>
 						  </div>
 						</div>
-					</form>
+					</form> -->
 				</div>
 			</div>
 		</section>
